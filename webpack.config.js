@@ -17,7 +17,7 @@ module.exports = (mode) => {
         { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
       ],
     },
-    plugins: [new CopyPlugin([{ from: "public" }])],
+    plugins: [new CopyPlugin([{ from: "public" }, { from: "vendor" }])],
     devServer: {
       contentBase: path.join(__dirname, "dist"),
       compress: true,

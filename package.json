@@ -17,11 +17,13 @@
     }
   },
   "dependencies": {
-    "aframe": "^1.0.4"
+    "aframe": "^1.0.4",
+    "aframe-haptics-component": "^1.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
+    "aframe-inspector": "^1.0.0",
     "babel-loader": "^8.1.0",
     "copy-webpack-plugin": "^5.1.1",
     "gh-pages": "^2.2.0",

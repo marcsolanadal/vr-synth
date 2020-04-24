@@ -1,3 +1,6 @@
+require("aframe");
+require("aframe-haptics-component");
+
 AFRAME.registerComponent("log", {
   schema: {
     message: { type: "string", default: "Hello, World!" },
@@ -17,7 +20,7 @@ AFRAME.registerComponent("oscillator", {
     osc.frequency.value = 440;
 
     osc.connect(audioCtx.destination);
-    // osc.start();
-    // osc.stop(audioCtx.currentTime + 1);
+    osc.start();
+    osc.stop(audioCtx.currentTime + 1);
   },
 });
