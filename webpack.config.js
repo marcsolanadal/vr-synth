@@ -1,20 +1,23 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = (mode) => {
   return {
     mode: mode,
-    entry: "./src/index.js",
+    entry: {
+      components: "./src/components.js",
+      world: "./src/world.js",
+    },
     output: {
+      filename: "[name].js",
       path: path.resolve(__dirname, "dist"),
-      filename: "bundle.js",
     },
     module: {
       rules: [
         { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
       ],
     },
-    plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
+    plugins: [new CopyPlugin([{ from: "public" }])],
     devServer: {
       contentBase: path.join(__dirname, "dist"),
       compress: true,

@@ -1,13 +1,14 @@
 {
-  "name": "vr-zoia-synth",
+  "name": "vr-synth",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "author": "",
   "license": "ISC",
   "scripts": {
-    "build": "webpack --mode=development",
-    "start:dev": "webpack-dev-server"
+    "build": "npm run clean && webpack --mode=development",
+    "start:dev": "webpack-dev-server",
+    "clean": "rm -rf ./dist"
   },
   "husky": {
     "hooks": {
@@ -19,8 +20,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
     "babel-loader": "^8.1.0",
-    "html-webpack-plugin": "^4.2.0",
+    "copy-webpack-plugin": "^5.1.1",
     "husky": "^4.2.5",
     "prettier": "2.0.5",
     "pretty-quick": "^2.0.1",
