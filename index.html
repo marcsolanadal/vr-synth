@@ -4,23 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VR SYNTH</title>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="./components.js"></script>
   </head>
   <body>
-    <a-scene>
+    <a-scene debug inspector>
       <a-sky color="#FFDAB9"></a-sky>
       <a-entity
         id="leftHand"
         hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc"
-        raycaster="far: 2"
+        raycaster="far: 10"
       ></a-entity>
       <a-entity
         id="rightHand"
         hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc"
-        raycaster="far: 2"
+        raycaster="far: 10"
       ></a-entity>
     </a-scene>
     <script src="./world.js"></script>
+    <script src="./aframe-inspector.min.js"></script>
   </body>
 </html>
