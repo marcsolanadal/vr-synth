@@ -6,9 +6,10 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "build": "npm run clean && webpack --mode=development",
+    "build:dev": "npm run clean && webpack --mode=development",
     "start:dev": "webpack-dev-server",
-    "clean": "rm -rf ./dist"
+    "clean": "rm -rf ./dist",
+    "publish": "npm run clean && npm run build:dev && gh-pages -d dist"
   },
   "husky": {
     "hooks": {
@@ -23,6 +24,7 @@
     "@babel/preset-env": "^7.9.5",
     "babel-loader": "^8.1.0",
     "copy-webpack-plugin": "^5.1.1",
+    "gh-pages": "^2.2.0",
     "husky": "^4.2.5",
     "prettier": "2.0.5",
     "pretty-quick": "^2.0.1",
