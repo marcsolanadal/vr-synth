@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("function Button(scene) {\n  var entity = document.createElement(\"a-entity\");\n  entity.setAttribute(\"log\", \"message: mother of loelere\");\n  entity.setAttribute(\"oscillator\", \"\");\n  scene.appendChild(entity);\n}\n\nvar scene = document.querySelector(\"a-scene\");\nButton(scene);\n\n//# sourceURL=webpack:///./src/world.js?");
+eval("function Test() {\n  var entity = document.createElement(\"a-entity\");\n  entity.setAttribute(\"log\", \"message: mother of loelere\");\n  entity.setAttribute(\"oscillator\", \"\");\n  return entity;\n}\n\nfunction Button() {\n  var entity = document.createElement(\"a-box\");\n  entity.setAttribute(\"position\", \"-1 0.5 -3\");\n  entity.setAttribute(\"rotation\", \"0 45 0\");\n  entity.setAttribute(\"color\", \"#4CC3D9\");\n  entity.addEventListener(\"raycaster-intersected\", function () {\n    entity.setAttribute(\"color\", \"#FF0000\");\n  });\n  entity.addEventListener(\"raycaster-intersected-cleared\", function () {\n    entity.setAttribute(\"color\", \"#4CC3D9\");\n  });\n  return entity;\n}\n\nvar scene = document.querySelector(\"a-scene\");\nvar entities = [Test, Button];\nentities.forEach(function (entity) {\n  return scene.appendChild(entity());\n});\n\n//# sourceURL=webpack:///./src/world.js?");
 
 /***/ })
 

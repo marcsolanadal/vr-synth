@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("AFRAME.registerComponent(\"log\", {\n  schema: {\n    message: {\n      type: \"string\",\n      \"default\": \"Hello, World!\"\n    }\n  },\n  init: function init() {\n    console.log(\"sweeet\", this.data.message);\n  }\n});\nAFRAME.registerComponent(\"oscillator\", {\n  init: function init() {\n    var AudioContext = window.AudioContext || window.webkitAudioContext;\n    var audioCtx = new AudioContext();\n    var osc = audioCtx.createOscillator();\n    osc.type = \"sine\";\n    osc.frequency.value = 440;\n    osc.connect(audioCtx.destination);\n    osc.start();\n    osc.stop(audioCtx.currentTime + 1);\n  }\n});\n\n//# sourceURL=webpack:///./src/components.js?");
+eval("AFRAME.registerComponent(\"log\", {\n  schema: {\n    message: {\n      type: \"string\",\n      \"default\": \"Hello, World!\"\n    }\n  },\n  init: function init() {\n    console.log(\"sweeet\", this.data.message);\n  }\n});\nAFRAME.registerComponent(\"oscillator\", {\n  init: function init() {\n    var AudioContext = window.AudioContext || window.webkitAudioContext;\n    var audioCtx = new AudioContext();\n    var osc = audioCtx.createOscillator();\n    osc.type = \"sine\";\n    osc.frequency.value = 440;\n    osc.connect(audioCtx.destination); // osc.start();\n    // osc.stop(audioCtx.currentTime + 1);\n  }\n});\n\n//# sourceURL=webpack:///./src/components.js?");
 
 /***/ })
 
