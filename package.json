@@ -26,7 +26,6 @@
     "aframe-inspector": "^1.0.0",
     "babel-loader": "^8.1.0",
     "copy-webpack-plugin": "^5.1.1",
-    "gh-pages": "^2.2.0",
     "husky": "^4.2.5",
     "prettier": "2.0.5",
     "pretty-quick": "^2.0.1",

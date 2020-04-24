@@ -24,3 +24,13 @@ AFRAME.registerComponent("oscillator", {
     osc.stop(audioCtx.currentTime + 1);
   },
 });
+
+AFRAME.registerComponent("collider-check", {
+  dependencies: ["raycaster"],
+
+  init: function () {
+    this.el.addEventListener("raycaster-intersection", function (event) {
+      event.el.setAttribute("color", "#00FF00");
+    });
+  },
+});

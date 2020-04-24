@@ -8,9 +8,10 @@ function Test() {
 
 function Button() {
   const entity = document.createElement("a-box");
-  entity.setAttribute("haptics", "");
+  // entity.setAttribute("haptics", "");
   // entity.setAttribute("visible", true);
   // entity.setAttribute("id", "test_box");
+  entity.className = "collidable";
   entity.setAttribute("position", "-0.1 0.5 -1");
   entity.setAttribute("rotation", "0 0 0");
   entity.setAttribute("color", "#4CC3D9");
@@ -33,9 +34,8 @@ function Button() {
   // entity.innerHTML = template;
 
   entity.addEventListener("raycaster-intersected", () => {
-    entity.components.haptics.pulse(0.5, 200);
     entity.setAttribute("color", "#FF0000");
-    entity.setAttribute("oscillator", "");
+    // entity.setAttribute("oscillator", "");
   });
 
   entity.addEventListener("raycaster-intersected-cleared", () => {
@@ -45,7 +45,22 @@ function Button() {
   return entity;
 }
 
-const scene = document.querySelector("a-scene");
+const scene = document.createElement("a-scene");
+scene.innerHTML = `
+  <a-sky color="#FFDAB9"></a-sky>
+  <a-entity
+    id="leftHand"
+    hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc"
+    raycaster="far: 10; showLine: true; objects: .collidable"
+  ></a-entity>
+  <a-entity
+    id="rightHand"
+    hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc"
+    raycaster="far: 10; showLine: true; objects: .collidable"
+  ></a-entity>
+`;
+
+document.body.appendChild(scene);
 
 const entities = [Test, Button];
 entities.forEach((entity) => scene.appendChild(entity()));
